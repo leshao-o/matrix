@@ -67,21 +67,22 @@ int main(int argc, const char * argv[]) {
     
     cout << endl;
     
-    // инициализация третьей матрицы и ввод доп переменных
+    // ввод вспомогательных переменных и третьей матрицы
     
     int q = col2;
-    int j = row2;
+    int t = row2;
+    int u = row1;
+    
     double matrix3[row1][col2];
     row1 = 0;
     
-    for (int n = 0; n < q; n++) {               // цикл с помощью которого присваивается значение каждому первому эл-ту новой
+    for (int n = 0; n < u; n++) {               // цикл с помощью которого присваивается значение каждому первому эл-ту новой
                                                 // строки матрицы
         for (col2 = 0; col2 < q; col2++) {      // цикл с помощью которого значение присваивается сначала первому потом второму
-            row2 = 0;                           // и тд элементам строки матрицы
+            row2 = 0;                           // и тд эл-там строки матрицы
             
-            for (col1 = 0; col1 < j; col1++) {  // цикл который перемножает эл-ты 1-ой и 2-ой матриц и суёт их третью
+            for (col1 = 0; col1 < t; col1++) {  // цикл который перемножает эл-ты 1-ой и 2-ой матриц и передаёт их в третью
                 matrix3[row1][col2] += matrix1[row1][col1] * matrix2[row2][col2];
-                cout<<"\n"<< "row1 = " <<row1<<endl<< "col2 = " <<col2<<endl<< "col1 = " <<col1<<endl<< "row2 = " <<row2<<"\n";
                 row2++;
             }
         }
@@ -94,8 +95,8 @@ int main(int argc, const char * argv[]) {
     // вывод третьей матрицы
     
     cout << "произведение матриц равно: " << "\n\n";
-    for (int i = 0; i < q; i++) {
-        for (int j = 0; j < col2; j++) {
+    for (int i = 0; i < u; i++) {
+        for (int j = 0; j < q; j++) {
             cout << matrix3[i][j] << "\t";
         }
         cout << endl;
@@ -105,4 +106,4 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-//cout<<"\n"<< "row1 = " << row1 << endl << "col2 = " << col2 << endl << "col1 = " << col1 << endl << "row2 = " << row2 <<"\n";
+//cout << "\nrow1 = " << row1 << "\ncol2 = " << col2 << "\ncol1 = " << col1 << "\nrow2 = " << row2 << "\n\n";
